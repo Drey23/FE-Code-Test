@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">cocktail_test</string>
+
+    <!-- region font spacing -->
+
+    <string name="cocktail_details_how_to_prepare">How to prepare</string>
+
+    <!-- endregion -->
+</resources>
