@@ -51,6 +51,7 @@ class CocktailAdapter(
         private var cocktail: Cocktail? = null
         private var listener: ICocktailAdapter? = null
         private var dataLoaded = false
+        var currentId = ""
 
         init {
             itemView.setOnClickListener(this)
@@ -74,6 +75,7 @@ class CocktailAdapter(
                 cocktailViewModel.getCocktailDetails(cocktailId).observe(context as BaseActivity, Observer {
                     if (it != null) {
                         dataLoaded = true
+                        currentId = it.id
                         this.view.tvIngredientOne.text = it.ingredients[0].ingredientName
                         this.view.tvIngredientTwo.text = it.ingredients[1].ingredientName
                     }
@@ -83,7 +85,9 @@ class CocktailAdapter(
 
         override fun onClick(v: View?) {
             cocktail?.let {
-                listener?.cocktailTapped(it)
+                if (currentId.isNotEmpty()) {
+                    listener?.cocktailTapped(currentId, it)
+                }
             }
         }
 
@@ -102,6 +106,6 @@ class CocktailAdapter(
     }
 
     interface ICocktailAdapter {
-        fun cocktailTapped(cocktail: Cocktail)
+        fun cocktailTapped(cocktailId: String, cocktail: Cocktail)
     }
 }

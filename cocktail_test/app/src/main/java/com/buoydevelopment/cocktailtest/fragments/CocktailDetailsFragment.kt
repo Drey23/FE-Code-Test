@@ -35,7 +35,7 @@ class CocktailDetailsFragment : BaseFragment() {
         val containerView = inflater.inflate(R.layout.fragment_cocktail_details, container, false)
 
         val toolbar = containerView.toolbar as Toolbar
-        setUpToolbar(toolbar, R.drawable.ic_arrow_back_white_24dp, title)
+        setUpToolbar(toolbar, title, R.drawable.ic_arrow_back_white_24dp)
 
         return containerView
     }
@@ -64,7 +64,7 @@ class CocktailDetailsFragment : BaseFragment() {
                     val ingredientsBuilder = StringBuilder()
 
                     for (ingredient in details.ingredients) {
-                        ingredientsBuilder.append(ingredient.ingredientMeasure + " " + ingredient.ingredientName)
+                        ingredientsBuilder.append("${ingredient.ingredientMeasure} ${ingredient.ingredientName}")
                         ingredientsBuilder.append("\n")
                     }
 

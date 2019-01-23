@@ -21,7 +21,7 @@ open class BaseFragment : Fragment() {
         App.appComponent.inject(this)
     }
 
-    fun setUpToolbar(toolbar: Toolbar?, homeIcon: Int = 0, title: String = "", onClickListener: View.OnClickListener ?= null) {
+    fun setUpToolbar(toolbar: Toolbar?, title: String = "", homeIcon: Int = 0, onClickListener: View.OnClickListener ?= null) {
         if (toolbar != null) {
             val activity = activity
 

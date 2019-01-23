@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.os.Bundle
+import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,8 @@ class MainFragment : BaseFragment() {
 
         containerView.rvItems.setHasFixedSize(true)
         containerView.rvItems.adapter = adapter
+        val toolbar = containerView.toolbar as Toolbar
+        setUpToolbar(toolbar, getString(R.string.title_main))
 
         return containerView
     }

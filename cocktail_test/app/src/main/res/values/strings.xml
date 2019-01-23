@@ -4,6 +4,7 @@
     <!-- region font spacing -->
 
     <string name="cocktail_details_how_to_prepare">How to prepare</string>
+    <string name="title_main">Cocktail App</string>
 
     <!-- endregion -->
 </resources>

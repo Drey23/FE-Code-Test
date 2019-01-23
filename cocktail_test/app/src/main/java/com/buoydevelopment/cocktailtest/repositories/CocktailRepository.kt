@@ -84,7 +84,7 @@ class CocktailRepository @Inject constructor(private val cocktailsApi: Cocktails
                                     cocktailIngredient.ingredientMeasure = measure
                                 }
 
-                                if (cocktailIngredient.ingredientMeasure.isNotBlank() && cocktailIngredient.ingredientName.isNotBlank()) {
+                                if (cocktailIngredient.ingredientMeasure.isNotBlank() && cocktailIngredient.ingredientMeasure.isNotEmpty() && cocktailIngredient.ingredientName.isNotBlank() && cocktailIngredient.ingredientName.isNotEmpty()) {
                                     cocktailDetails.ingredients.add(cocktailIngredient)
                                 }
                             }

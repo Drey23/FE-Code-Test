@@ -23,11 +23,11 @@ class MainActivity : BaseActivity(), CocktailAdapter.ICocktailAdapter {
         replaceFragment(mainFragment, R.id.base_container)
     }
 
-    override fun cocktailTapped(cocktail: Cocktail) {
+    override fun cocktailTapped(id: String, cocktail: Cocktail) {
         val (cocktailName, _, cocktailId) = cocktail
         cocktailViewModel.setChosenCocktail(cocktail)
 
-        val cocktailDetails = CocktailDetailsFragment.newInstance(cocktailName, cocktailId)
+        val cocktailDetails = CocktailDetailsFragment.newInstance(cocktailName, id)
         addFragment(cocktailDetails, R.id.base_container, true, true)
     }
 }
